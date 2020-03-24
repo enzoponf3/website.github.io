@@ -1,7 +1,26 @@
+*{
+    margin: 0;
+}
+body{
+    background-image: linear-gradient(to bottom right, #0288d1, #c2185b);
+    height: 100vh;
+}
+h1{
+    margin-bottom: 2rem;
+    padding: 1rem 2rem;
+    box-shadow: 0 15px 24px rgba(255,255,255,.3);
+    border-radius: 3px;
+}
 main{
     display: flex;
     align-content: center;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    height: 100%;
+}
+iframe{
+    width: 70vw;
+    height: 70vh;
+    box-shadow: 0 0 12px rgba(0,0,0,.3);
 }
