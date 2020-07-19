@@ -66,8 +66,14 @@ function getWeatherByCoords(latitude, longitude,city){
     .then(d=>fillWeather(d,city))
 }
 
-window.onload = () => {
-    fetch(`http://ip-api.com/json/?fields=city,lat,lon`)
+function getIpInfo(ip){
+    fetch(`https://freegeoip.app/json/${ip}`)
     .then(r=>r.json())
-    .then(d=>getWeatherByCoords(d.lat,d.lon,d.city))
+    .then(d => getWeatherByCoords(d.latitude, d.longitude, d.city))
+}
+
+window.onload = () => {
+    fetch(`https://api64.ipify.org/?format=json`)
+    .then(r=>r.json())
+    .then(d=>getIpInfo(d.ip))
     }
