@@ -7,10 +7,10 @@ body{
     min-height: 100%;
 }
 #bg-image{
-    background-image: url(./img/backg.jpg); /*Photo by Cassi Josh on Unsplash*/
+    background-image: url(./img/yellowWall.jpg); /*Photo by Cassi Josh on Unsplash*/
     background-repeat: no-repeat;
     background-size: cover;
-    filter: brightness(.2);
+    filter: brightness(1);
     height: 100%;
     width: 100%;
     position: absolute;
@@ -25,14 +25,21 @@ body{
     position: fixed;
     height: 100vh;
     width: 100vw;
-    z-index: -900;
 }
 h1{
     color: rgba(245,245,245,1);
-    margin-bottom: 2rem;
-    padding: 1rem 2rem;
+    padding: 0rem 0rem;
     border-radius: 3px;
-    font-size: 50px;
+    font-size: 19rem;
+    text-shadow: -1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey;
+}
+h2{
+    color: rgba(230,230,230,1);
+    font-style: italic;
+    position: relative;
+    top: -3rem;
+    font-size: 2rem;
+    text-shadow: -1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey;
 }
 a{
     text-decoration: none;
@@ -40,54 +47,59 @@ a{
 .social-icon{
     background-color: rgba(245,245,245,1);
     padding: .5rem .5rem;
-    margin: 0 1rem;
+    margin: 1rem 0;
     color:black;
     border-radius: 50%;
 }
 #icon-container{
     display: flex;
-    margin-bottom: 6rem;
+    flex-direction: column;
+    position: fixed;
+    top:17vh;
+    right: 18.7vw;
+
 }
-#contact-btn{
-    border-radius: 5px;
-    padding: 1rem 2rem;
-    color: black;
-    background-color: rgb(230, 23, 23);
-    font-size: 24px;
-}
-#wara{
+#intro-placeholder{
     height: 100vh;
+    position: relative;
+    z-index: -999999;
 }
 #proyects{
     display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: space-evenly;
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
-    background-color: rgb(10,10,10);
+    background-color: rgb(144, 42, 165);
     position: relative;
+    padding: 2rem 0;
 }
 .tile{
-    background-color: rgba(245,245,245,1);
-    margin: 3rem 2rem;
-    border-radius: 4px;
-    width: 25vw;
-    height: 20vh;
-}
-#moreProys{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(245,245,245,1);
+    margin: 2rem 2rem;
+    border-radius: 4px;
+    width: 23vw;
+    height: 26vh;
+    min-width: 300px;
     justify-content: space-evenly;
-    width: 100%;
 }
+
+.prev-img{
+    height: 18vh;
+    width: 18vw;
+}
+
 footer{
     width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 1.5rem 0;
-    background-color: rgb(88, 9, 9);
+    padding: 1rem 0;
+    background-color: rgb(255, 219, 14);
     color: rgba(245,245,245,1);
+    position: relative;
+    z-index: 100    ;
 }

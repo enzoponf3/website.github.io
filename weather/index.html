@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+       Weather Forecast
+    </header>
+    <main>
+        <div class="searcher">
+            <form id="city-form">
+                <input  type="text" placeholder="City Name" id="city-input">
+                <input type="submit" id="city-sub"hidden>
+            </form>
+            <a class="search-button" onclick="getWeather()"><i class="material-icons">search</i></a>
+        </div>
+        <div id="weather-container" class="weather-container">
+            <div class="current-weather">
+                <span>
+                    <img id="current-weather-icon" src="" alt="weather-icon">
+                </span>
+                <div>
+                
+                </div>
+            </div>
+            <!--<span>Loading . . .   Please wait.</span>-->
+            <div id="weather-prediction" class="weather-prediction">
+                
+            </div>
+        </div>
+    </main>
+    <footer>
+        &copy; Developed By Enzo Ponferrada 
+    </footer>
+</body>
+<script src="script.js"></script>
+</html>
