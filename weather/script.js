@@ -1,5 +1,5 @@
 
-var api_key = "6ae46840e17f448dea93d24a83a21d6a"
+const WEATHER_API_KEY = "6ae46840e17f448dea93d24a83a21d6a"
 
 let form = document.getElementById("city-form")
 
@@ -52,32 +52,22 @@ function fillWeather(data,city){
 
 function getWeather (){
     let cityValue = (document.getElementById("city-input")).value
-    if(!cityValue){
-        cityValue = "Paris"
-    }
-    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${cityValue}&appid=${api_key}&units=metric`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityValue}&appid=${WEATHER_API_KEY}`)
     .then(r => r.json())
     .then(city => {
-        getWeatherByCoords(city.city.coord.lat,city.city.coord.lon,cityValue)
+        getWeatherByCoords(city.coord.lat,city.coord.lon,cityValue)
     }) 
 }
 
 function getWeatherByCoords(latitude, longitude,city){
     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&
-    exclude=minutely,hourly&appid=${api_key}&units=metric`)
+    exclude=minutely,hourly&appid=${WEATHER_API_KEY}&units=metric`)
     .then(r=>r.json())
     .then(d=>fillWeather(d,city))
 }
 
-function success(pos){
-    getWeatherByCoords(pos.coords.latitude, pos.coords.longitude);
-}
-function error(){
-    getWeather()
-}
-let options = {
-    enableHighAccuracy: true,
-    timeout: 5000,
-    maximumAge: 0
-}
-window.onload = () => {navigator.geolocation.getCurrentPosition(success, error,options)}
+window.onload = () => {
+    fetch(`http://ip-api.com/json/?fields=city,lat,lon`)
+    .then(r=>r.json())
+    .then(d=>getWeatherByCoords(d.lat,d.lon,d.city))
+    }
