@@ -14,7 +14,7 @@ function fillWeather(data,city){
     let predict = document.getElementById("weather-prediction")
     predict.innerHTML=''
     var d = new Date();
-    var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat","Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     while(contDaysPredict != 6 ){
         let dayPredict = document.createElement("div")
         dayPredict.classList.add("daily-prediction")
@@ -52,6 +52,7 @@ function fillWeather(data,city){
 
 function getWeather (){
     let cityValue = (document.getElementById("city-input")).value
+    if(cityValue==""){return}
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityValue}&appid=${WEATHER_API_KEY}`)
     .then(r => r.json())
     .then(city => {

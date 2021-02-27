@@ -10,8 +10,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgb(2,0,36);
-    background: linear-gradient(135deg, rgba(2,0,36,1) 0%, rgba(103,9,121,1) 35%, rgba(2,0,36,1) 100%);
+    background: #022873;
 }
 
 header{
@@ -29,10 +28,11 @@ main{
     flex-direction: column;
     position:relative;
     width: 100%;
-    height: calc(100vh - 3rem);
+    min-height: calc(100vh - 3rem);
     align-items: center;
     background: rgba(0,0,0,.5);
     overflow: hidden;
+    padding: 0 1rem;
 }
 
 .searcher{
@@ -45,10 +45,17 @@ main{
     background: transparent;
     height: 3rem;
     border: solid #595959 2px;
-    border-radius: 3px;
+    border-radius: 20px;
     font-size: 1.3rem;
     margin-right: 1rem;
     padding-left: 1rem;
+}
+
+#city-input:focus{
+    outline: none;
+    border-radius: 20px;
+    border: solid 2px #e9e9e9;
+    background: rgba(250,250,250,.1);
 }
 
 .search-button{
@@ -67,43 +74,45 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 55%;
-    height: 65vh;
-    border: solid coral 2px;
-    border-radius: 3px;
-    margin: 2rem;
+    width: 100%;
     font-size: x-large;
 }
 
 .weather-container>span{
     font-size: xx-large;
+    margin: 1rem 0;
 }
 
 .current-weather{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border: solid lightgreen 2px;
-    width: 100%;
-    height: 50%;
+    width: 90%;
+    border-radius: 10px;
     margin-bottom: 1rem;
     font-weight: 900;
+    background: rgba(0,0,0,.4);
 }
 
 .weather-prediction{
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-evenly;
-    border: solid palevioletred 2px;
-    width: 100%;
-    height: 45%;
+    width: 90%;
+    margin-bottom: 1rem;
 }
 
 .daily-prediction{
     display: flex;
-    flex-direction: column;
+    width: 100%;
+    height: 2.5rem;
+    margin-bottom: 10px;
     align-items: center;
     justify-content: space-evenly;
-    border: solid seagreen 2px;
+    border-radius: 10px;
+    background: rgba(0,0,0,.4);
+    font-size: 1.2rem;
 }
 
 .current-information{
@@ -111,12 +120,15 @@ main{
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    height: 100%;
 }
+    .current-information > span{
+        padding: 1rem 0;
+        font-size: 1.2rem;
+    }
 
 .current-icon{
-    height: 10rem;
-    width: 10rem;
+    height: 8rem;
+    width: 8rem;
 }
 
 .daily-icon{
@@ -134,4 +146,32 @@ footer{
     align-items: center;
     justify-content: center;
     background: rgba(0,0,0,.35);
+}
+
+@media(min-width: 568px){
+    .current-icon{
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .weather-prediction{
+        width: 90%;
+        flex-direction: row;
+    }
+
+    .daily-prediction{
+        width: 18%;
+        height: fit-content;
+        flex-direction: column;
+    }
+
+    .daily-prediction > span{
+        margin: .5rem 0;
+    }
+}
+
+@media(min-width:1224px){
+    .weather-container{
+        max-width: 60rem;
+    }
 }
