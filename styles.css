@@ -13,16 +13,8 @@ body{
     height: 100vh;
     width: 100vw;
     color: #e9e9e9;
-    background-color: #d32f2f;
-    /*background pattern: https://projects.verou.me/css3patterns/#japanese-cube*/
-    background-image: linear-gradient(30deg, #9a0007 12%, transparent 12.5%, transparent 87%, #9a0007 87.5%, #9a0007),
-    linear-gradient(150deg, #9a0007 12%, transparent 12.5%, transparent 87%, #9a0007 87.5%, #9a0007),
-    linear-gradient(30deg, #9a0007 12%, transparent 12.5%, transparent 87%, #9a0007 87.5%, #9a0007),
-    linear-gradient(150deg, #9a0007 12%, transparent 12.5%, transparent 87%, #9a0007 87.5%, #9a0007),
-    linear-gradient(60deg, #ff6659 25%, transparent 25.5%, transparent 75%, #ff6659 75%, #ff6659),
-    linear-gradient(60deg, #ff6659 25%, transparent 25.5%, transparent 75%, #ff6659 75%, #ff6659);
-    background-size:80px 140px;
-    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+    background-color:#5A13F2;
+    margin-bottom: 5rem;
 }
 .description{
     display: flex;
@@ -41,6 +33,7 @@ h1{
     font-size: 3rem;
     border-bottom: solid 3px rgba(248,248,248, 0.4);
     margin-bottom: 1rem;
+    padding: 0 1rem;
 
 }
 p{
@@ -49,9 +42,10 @@ p{
     line-height: 2rem;
 }
 a{
-    text-decoration: none;
-    color: #ff6659;
+    text-decoration:underline;
+    color:#e9e9e9;
     font-weight: 900;
+    font-size: 22px;
 }
 .social-icon{
     background-color: #e9e9e9;
@@ -82,13 +76,7 @@ a{
     width: 100%;
     position: relative;
     padding: 2rem 0;
-    /*back pattern: https://projects.verou.me/css3patterns/#stairs*/
-    background:
-    linear-gradient(63deg, #111 23%, transparent 23%) 7px 0,
-    linear-gradient(63deg, transparent 74%, #111 78%),
-    linear-gradient(63deg, transparent 34%, #111 38%, #111 58%, transparent 62%),
-    #7f0000;
-    background-size: 16px 48px;
+    background-color: #2745F2;
 }
 .tile{
     display: flex;
@@ -103,6 +91,11 @@ a{
     min-width: 300px;
     justify-content: space-evenly;
     color: #e9e9e9;
+    font-size: 18px;
+}
+
+.tile:hover{
+    box-shadow: 0 0 10px rgba(255,255,255,.3);
 }
 
 .prev-img{
@@ -119,15 +112,17 @@ footer{
     align-items: center;
     flex-direction: column;
     padding: 1rem 0;
-    background-color: #9a0007;
-    color: #f1f1f1;
+    background-color:#138AF2;
+    color: #121212;
     position: relative;
+    font-size: 18px;
 }
 
 @media(min-width:800px){
     .description{
         flex-direction: row;
         border-radius: 5px;
+        max-width: 70%;
     }
     h1{
         color: #e9e9e9;
